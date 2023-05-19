@@ -77,9 +77,15 @@ export class Contract {
     { callbacks = () => {}, tronweb = {} } = {}
   ) => {
     try {
-      const transaction = await this.trigger(address, functionSelector, parameters, options, {
-        tronweb,
-      });
+      const transaction = await this.trigger(
+        address,
+        functionSelector,
+        parameters,
+        options,
+        {
+          tronweb,
+        }
+      );
 
       const signedTransaction = await this.sign(transaction?.transaction, {
         tronweb,
