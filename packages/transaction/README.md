@@ -678,3 +678,7 @@ const response = await ContractInteract.sendToken(
   }
 }
 ```
+
+# Licence
+
+TronWeb is distributed under a MIT licence.
