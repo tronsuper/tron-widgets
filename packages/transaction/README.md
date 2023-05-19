@@ -1,9 +1,3 @@
-# What is tronwidgets
-
-TronWidgets is a collection of libraries that allow you to interact with the ecosystem of TRON network. It aims to provide some out-of-box javascript SDK and UI components (coming soon) for TRON developers. At present, a `@tronwidgets/transaction` lib is provided, which is a wrap of [TronWeb](tronweb.network) transaction builder lib. More libraries is on the way.
-
-The following documentation will guide you through installing and using `@tronwidgets/transaction` to create transactions of TRON network.
-
 # @tronwidgets/transaction
 
 ## Introduction
@@ -20,59 +14,63 @@ The lib can help DApp developers trigger contract transactions, query contract m
 - `npm i @tronwidgets/transaction`
 
 ## API List
-  - [trigger](#trigger)
-  - [sign](#sign)
-  - [broadcast](#broadcast)
-  - [send](#send)
-  - [call](#call)
-  - [view](#view)
-  - [deploy](#deploy)
-  - [sendTrx](#sendtrx)
-  - [sendToken](#sendtoken)
+
+- [trigger](#trigger)
+- [sign](#sign)
+- [broadcast](#broadcast)
+- [send](#send)
+- [call](#call)
+- [view](#view)
+- [deploy](#deploy)
+- [sendTrx](#sendtrx)
+- [sendToken](#sendtoken)
 
 ## Documentation
-  [Detail](https://tronwidgets-transaction.readthedocs.io/en/latest/)
+
+[Detail](https://tronwidgets-transaction.readthedocs.io/en/latest/)
 
 ## Code Example
 
-  Import it at the top of your code.
+Import it at the top of your code.
 
-  ```
-  import { ContractInteract } from "@tronwidgets/transaction";
-  ```
+```
+import { ContractInteract } from "@tronwidgets/transaction";
+```
 
-  Contract function may require a Tron wallet address as target recipient.
+Contract function may require a Tron wallet address as target recipient.
 
-  ```
-  const ACCOUNT = "TBHHa5Z6WQ1cRcgUhdvqdW4f728f2fiJmF";
-  ```
+```
+const ACCOUNT = "TBHHa5Z6WQ1cRcgUhdvqdW4f728f2fiJmF";
+```
 
-  Token contract (BTT @ nile testnet).
+Token contract (BTT @ nile testnet).
 
-  ```
-  const CONTRACT = "TNuoKL1ni8aoshfFL1ASca1Gou9RXwAzfn";
-  ```
+```
+const CONTRACT = "TNuoKL1ni8aoshfFL1ASca1Gou9RXwAzfn";
+```
 
-  Token contract (BTT(TRC20) @ nile testnet).
+Token contract (BTT(TRC20) @ nile testnet).
 
-  ```
-  const CONTRACT_2 = "TBagxx57zx73VJJ61o12VfxzQ2EG3KHYJp";
-  ```
+```
+const CONTRACT_2 = "TBagxx57zx73VJJ61o12VfxzQ2EG3KHYJp";
+```
 
-  The [ABI](#abi) code example is located at the end of the document.
+The [ABI](#abi) code example is located at the end of the document.
 
-  All functions are [asynchronous](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function) and the await keyword is permitted within it. The return type is [Promise object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise).
+All functions are [asynchronous](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function) and the await keyword is permitted within it. The return type is [Promise object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise).
 
-  Check "~/defi-demo/src/routes/contract.js" for real world implementation.
+Check "~/defi-demo/src/routes/contract.js" for real world implementation.
 
-  Check "~/packages/transaction/src/index.ts" or "~/packages/transaction/dist/index.d.ts" for code source.
+Check "~/packages/transaction/src/index.ts" or "~/packages/transaction/dist/index.d.ts" for code source.
 
 ## Time to BUILD
 
 ## trigger
+
 <span id="trigger"></span>
 
 ### parameters:
+
 ```
 (address: any, functionSelector: any, options, parameters, { tronweb }?: {
   tronweb?: {} | undefined;
@@ -80,6 +78,7 @@ The lib can help DApp developers trigger contract transactions, query contract m
 ```
 
 ### example:
+
 ```
 const response = await ContractInteract.trigger(
   "TGjgvdTWWrybVLaVeFqSyVqJQWjxqRYbaK", // Decentralized USD (USDD)
@@ -91,6 +90,7 @@ const response = await ContractInteract.trigger(
 ```
 
 ### response:
+
 ```
 {
   "result": {
@@ -132,13 +132,17 @@ const response = await ContractInteract.trigger(
 ```
 
 ## sign
+
 <span id="sign"></span>
-### parameters: 
+
+### parameters:
+
 ```
 (transaction: any, { tronweb }?: { tronweb?: {} | undefined; })
 ```
 
 ### example:
+
 ```
 const { transaction, result } = await window.tronWeb.transactionBuilder.triggerSmartContract(
   CONTRACT,
@@ -163,8 +167,9 @@ if (!result.result) {
 const response = await window.tronWeb.trx.sign(transaction);
 ```
 
-### response: 
-``` 
+### response:
+
+```
 {
   "visible": false,
   "txID": "093e9f4b3ba31c6429fa0b1b22f10281886e6bbe5ecb97bb25c721497c291231",
@@ -196,14 +201,17 @@ const response = await window.tronWeb.trx.sign(transaction);
 ```
 
 ## broadcast
+
 <span id="broadcast"></span>
 
-### parameters: 
+### parameters:
+
 ```
 (signedTransaction: any, { tronweb }?: { tronweb?: {} | undefined; })
 ```
 
-### example: 
+### example:
+
 ```
 const address = "TDqjTkZ63yHB19w2n7vPm2qAkLHwn9fKKk";
 const functionSelector = "approve(address,uint256)";
@@ -233,7 +241,8 @@ const signedTransaction = await ContractInteract.sign(transaction.transaction);
 const response = await ContractInteract.broadcast(signedTransaction);
 ```
 
-### transaction: 
+### transaction:
+
 ```
 {
   "result": {
@@ -267,7 +276,8 @@ const response = await ContractInteract.broadcast(signedTransaction);
 }
 ```
 
-### signedTransaction: 
+### signedTransaction:
+
 ```
 {
   "visible": false,
@@ -299,7 +309,8 @@ const response = await ContractInteract.broadcast(signedTransaction);
 }
 ```
 
-### response: 
+### response:
+
 ```
 {
   "result": true,
@@ -336,9 +347,11 @@ const response = await ContractInteract.broadcast(signedTransaction);
 ```
 
 ## send
+
 <span id="send"></span>
 
 ### parameters:
+
 ```
 (address: any, functionSelector: any, options, parameters, { tronweb }?: {
   tronweb?: {} | undefined;
@@ -346,6 +359,7 @@ const response = await ContractInteract.broadcast(signedTransaction);
 ```
 
 ### example:
+
 ```
 const response = await ContractInteract.send(
   ACCOUNT,
@@ -355,6 +369,7 @@ const response = await ContractInteract.send(
 ```
 
 ### response:
+
 ```
 {
   "result": true,
@@ -391,17 +406,20 @@ const response = await ContractInteract.send(
 ```
 
 ## call
+
 <span id="call"></span>
 
-### parameters: 
+### parameters:
+
 ```
 (address: string, _functionSelector: any, { tronweb, abi }?: {
   tronweb?: {} | undefined;
   abi?: never[] | undefined;
-})  
+})
 ```
 
-### example: 
+### example:
+
 ```
 const response = await call(
   ACCOUNT,
@@ -410,7 +428,8 @@ const response = await call(
 );
 ```
 
-### response: 
+### response:
+
 ```
 {
   "result": "Hello"
@@ -418,9 +437,11 @@ const response = await call(
 ```
 
 ## view
+
 <span id="view"></span>
 
 ### parameters:
+
 ```
 (address: string, _functionSelector: any, parameters = []{ tronweb } ?: {
   tronweb?: {} | undefined;
@@ -428,6 +449,7 @@ const response = await call(
 ```
 
 ### example:
+
 ```
 const response = await view(
   CONTRACT_2,
@@ -437,6 +459,7 @@ const response = await view(
 ```
 
 ### response:
+
 ```
 {
   "result": {
@@ -477,8 +500,11 @@ const response = await view(
 ```
 
 ## deploy
+
 <span id="deploy"></span>
-### parameters: 
+
+### parameters:
+
 ```
 (options: any, address: string, { callbacks, tronweb }?: {
   callbacks?: (() => void) | undefined;
@@ -486,7 +512,8 @@ const response = await view(
 })
 ```
 
-### example: 
+### example:
+
 ```
 const deployOptions = {
   abi: funcABIV2.abi,
@@ -498,7 +525,8 @@ const deployOptions = {
 const response = await ContractInteract.deploy(deployOptions);
 ```
 
-### response: 
+### response:
+
 ```
 {
   "result": true,
@@ -571,8 +599,11 @@ const response = await ContractInteract.deploy(deployOptions);
 ```
 
 ## sendTrx
+
 <span id="sendtrx"></span>
-### parameters: 
+
+### parameters:
+
 ```
 (toAddress: string, amount: string | number, fromAddress: string, options: any, { callbacks, tronweb }?: {
   callbacks?: (() => void) | undefined;
@@ -580,7 +611,8 @@ const response = await ContractInteract.deploy(deployOptions);
 })
 ```
 
-### example: 
+### example:
+
 ```
 const response = await ContractInteract.sendTrx(
   "TBHHa5Z6WQ1cRcgUhdvqdW4f728f2fiJmF",
@@ -588,7 +620,8 @@ const response = await ContractInteract.sendTrx(
 );
 ```
 
-### response: 
+### response:
+
 ```
 {
   "result": true,
@@ -624,9 +657,11 @@ const response = await ContractInteract.sendTrx(
 ```
 
 ## sendToken
+
 <span id="sendtoken"></span>
 
 ### parameters:
+
 ```
 (address: string, amount: string | number, tokenID: string | number, privateKey: string, { callbacks, tronweb }?: {
   callbacks?: (() => void) | undefined;
@@ -634,16 +669,18 @@ const response = await ContractInteract.sendTrx(
 })
 ```
 
-### example: 
+### example:
+
 ```
 const response = await ContractInteract.sendToken(
   ACCOUNT,
   10000,
   "1000617"
-); 
+);
 ```
 
-### response: 
+### response:
+
 ```
 {
   "result": true,
