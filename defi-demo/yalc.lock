@@ -1,0 +1,9 @@
+{
+  "version": "v1",
+  "packages": {
+    "@tronwidgets/transaction": {
+      "signature": "7451965477a32078861ff59545eb1f38",
+      "file": true
+    }
+  }
+}

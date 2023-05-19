@@ -1,0 +1,189 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017-2022, TRON Network Limited
+# This file is distributed under the same license as the
+# tronwidgets package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tronwidgets \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-11-03 01:03+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../transaction.rst:5
+msgid "transaction"
+msgstr ""
+
+#: ../../transaction.rst:7
+msgid ""
+"transaction can help dapp developers trigger contract transactions,"
+" query contract methods, etc. With transaction, dapp developers "
+"will be able to:"
+msgstr "transaction可以帮助dapp执行合约交易、查询合约函数等。使用transaction，开发者将能够："
+
+#: ../../transaction.rst:11
+msgid "trigger transaction, sign and broadcast"
+msgstr "执行交易、签名和广播"
+
+#: ../../transaction.rst:12
+msgid ""
+"use the call or view method to query the specific parameters of the "
+"contract"
+msgstr "查看合约函数的具体参数"
+
+#: ../../transaction.rst:14
+msgid "deploy contract"
+msgstr "部署合约"
+
+#: ../../transaction.rst:15
+msgid "send trx or other token"
+msgstr "发送trx或其他代币"
+
+#: ../../transaction.rst:20
+msgid "Get Started"
+msgstr "入门"
+
+#: ../../transaction.rst:23
+msgid "Installation"
+msgstr "安装"
+
+#: ../../transaction.rst:25
+msgid "``npm i``"
+msgstr ""
+
+#: ../../transaction.rst:38
+msgid "Code Example"
+msgstr "实现原理"
+
+#: ../../transaction.rst:40
+msgid ""
+"Clone the repo or copy “/packages/transaction/” and import it as "
+"local dependency with the preferred name “@tronwidgets/transaction” in "
+"package.json. ``\"dependencies\": {       ...       \"@tronwidgets/contract-"
+"interact\": \"file:../packages/transaction/\",       ...     }``"
+msgstr "克隆代码存储库或复制“/packages/transaction/”作为本地依赖项以名称“@tronwidgets/transaction”导入package.json。``\"dependencies\": {       ...       \"@tronwidgets/contract-"
+"interact\": \"file:../packages/transaction/\",       ...     }``"
+
+#: ../../transaction.rst:45
+msgid ""
+"Import it at the top of your code. ``import { ContractInteract } from "
+"\"@tronwidgets/transaction\";``"
+msgstr "在代码页顶部导入。 ``import { ContractInteract } from \"@tronwidgets/transaction\";``"
+
+#: ../../transaction.rst:48
+msgid ""
+"Contract function may require a Tron wallet address as target recipient. "
+"``const ACCOUNT = \"TBHHa5Z6WQ1cRcgUhdvqdW4f728f2fiJmF\";``"
+msgstr "合约功能可能需要一个Tron钱包地址作为目标。 ``const ACCOUNT = \"TBHHa5Z6WQ1cRcgUhdvqdW4f728f2fiJmF\";``"
+
+#: ../../transaction.rst:51
+msgid ""
+"Token contract (BTT @ nile testnet). ``const CONTRACT = "
+"\"TNuoKL1ni8aoshfFL1ASca1Gou9RXwAzfn\";``"
+msgstr "代币合约 (BTT @ nile testnet). ``const CONTRACT = \"TNuoKL1ni8aoshfFL1ASca1Gou9RXwAzfn\";``"
+
+#: ../../transaction.rst:54
+msgid ""
+"Token contract (BTT(TRC20) @ nile testnet). ``const CONTRACT_2 = "
+"\"TBagxx57zx73VJJ61o12VfxzQ2EG3KHYJp\";``"
+msgstr "代币合约 (BTT(TRC20) @ nile testnet). ``const CONTRACT_2 = \"TBagxx57zx73VJJ61o12VfxzQ2EG3KHYJp\";``"
+
+#: ../../transaction.rst:57
+msgid "The `ABI <#abi>`__ code example is located at the end of the document."
+msgstr "`ABI <#abi>`__ 代码示例位于文档末尾。"
+
+#: ../../transaction.rst:59
+msgid ""
+"All functions are `asynchronous <https://developer.mozilla.org/en-"
+"US/docs/Web/JavaScript/Reference/Statements/async_function>`__ and the "
+"await keyword is permitted within it. The return type is `Promise object "
+"<https://developer.mozilla.org/en-"
+"US/docs/Web/JavaScript/Reference/Global_Objects/Promise>`__."
+msgstr "所有函数都是 `异步 <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function>`__ 的，其中允许使用 await 关键字。 返回类型是 `Promise对象 <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise>`__。"
+
+#: ../../transaction.rst:65
+msgid "Check ``/defi-demo/src/routes/contract.js`` for real world implementation."
+msgstr "查看 ``/defi-demo/src/routes/contract.js`` 以了解真实的实现例子。"
+
+#: ../../transaction.rst:67
+msgid ""
+"Check ``/packages/transaction/src/index.ts`` or ``/packages"
+"/transaction/dist/index.d.ts`` for code source."
+msgstr "查看 ``/packages/transaction/src/index.ts`` 或 ``/packages/transaction/dist/index.d.ts`` 的代码源。"
+
+#: ../../transaction.rst:72
+msgid "trigger"
+msgstr ""
+
+#: ../../transaction.rst:75 ../../transaction.rst:145
+#: ../../transaction.rst:224 ../../transaction.rst:382
+#: ../../transaction.rst:451 ../../transaction.rst:492
+#: ../../transaction.rst:563 ../../transaction.rst:670
+#: ../../transaction.rst:738
+msgid "Parameters"
+msgstr "参数"
+
+#: ../../transaction.rst:84 ../../transaction.rst:154
+#: ../../transaction.rst:233 ../../transaction.rst:393
+#: ../../transaction.rst:463 ../../transaction.rst:503
+#: ../../transaction.rst:575 ../../transaction.rst:682
+#: ../../transaction.rst:750
+msgid "Example"
+msgstr "示例"
+
+#: ../../transaction.rst:97 ../../transaction.rst:183
+#: ../../transaction.rst:337 ../../transaction.rst:406
+#: ../../transaction.rst:476 ../../transaction.rst:516
+#: ../../transaction.rst:591 ../../transaction.rst:694
+#: ../../transaction.rst:763
+msgid "Response"
+msgstr "返回值"
+
+#: ../../transaction.rst:142
+msgid "sign"
+msgstr ""
+
+#: ../../transaction.rst:219
+msgid "broadcast"
+msgstr ""
+
+#: ../../transaction.rst:265
+msgid "transaction"
+msgstr "交易"
+
+#: ../../transaction.rst:301
+msgid "signedTransaction"
+msgstr "已签署交易"
+
+#: ../../transaction.rst:377
+msgid "send"
+msgstr ""
+
+#: ../../transaction.rst:446
+msgid "call"
+msgstr ""
+
+#: ../../transaction.rst:487
+msgid "view"
+msgstr ""
+
+#: ../../transaction.rst:560
+msgid "Deploy"
+msgstr ""
+
+#: ../../transaction.rst:667
+msgid "sendTrx"
+msgstr ""
+
+#: ../../transaction.rst:733
+msgid "sendToken"
+msgstr ""
+
