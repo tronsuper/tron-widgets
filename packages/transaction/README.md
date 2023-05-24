@@ -55,7 +55,7 @@ Token contract (BTT(TRC20) @ nile testnet).
 const CONTRACT_2 = "TBagxx57zx73VJJ61o12VfxzQ2EG3KHYJp";
 ```
 
-The [ABI](#abi) code example is located at the end of the document.
+The ABI code example can be found in the demo code.
 
 All functions are [asynchronous](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function) and the await keyword is permitted within it. The return type is [Promise object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise).
 
